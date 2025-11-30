@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,35 +11,51 @@
         /* Main Styling: Using Inter (Tailwind Default) for professional English look */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* Deep space background */
-            color: #e2e8f0; /* Default text color */
+            background-color: #0f172a;
+            /* Deep space background */
+            color: #e2e8f0;
+            /* Default text color */
             scroll-behavior: smooth;
         }
 
         /* Glassmorphism and 3D effects */
         .glass-card {
-            background-color: rgba(255, 255, 255, 0.05); /* Light transparency */
-            backdrop-filter: blur(10px); /* Glass blur effect */
+            background-color: rgba(255, 255, 255, 0.05);
+            /* Light transparency */
+            backdrop-filter: blur(10px);
+            /* Glass blur effect */
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease-in-out;
-            transform-style: preserve-3d; /* Key for tilt effect */
+            transform-style: preserve-3d;
+            /* Key for tilt effect */
         }
-        
+
         /* Primary Button Gradient */
         .btn-primary {
             background-image: linear-gradient(to right, #3b82f6, #1d4ed8);
             transition: all 0.3s ease-in-out;
             box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
         }
+
         .btn-primary:hover {
             box-shadow: 0 4px 30px rgba(59, 130, 246, 0.5);
         }
 
         /* Abstract Background Animation */
         @keyframes pulse-bg {
-            0%, 100% { transform: scale(1); opacity: 0.1; }
-            50% { transform: scale(1.1); opacity: 0.25; }
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.25;
+            }
         }
+
         .abstract-orb {
             animation: pulse-bg 10s infinite alternate ease-in-out;
         }
@@ -49,20 +66,26 @@
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
+
         .scroll-reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
+
 <body class="bg-slate-900 min-h-screen">
 
     <!-- 1. Interactive Particle Network Canvas (Background) -->
     <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full -z-20 opacity-40"></canvas>
 
     <!-- 2. Abstract Orbs (Background Decoration) -->
-    <div class="fixed top-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] -z-10 abstract-orb"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-amber-600/10 rounded-full blur-[100px] -z-10 abstract-orb delay-1000"></div>
+    <div
+        class="fixed top-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] -z-10 abstract-orb">
+    </div>
+    <div
+        class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-amber-600/10 rounded-full blur-[100px] -z-10 abstract-orb delay-1000">
+    </div>
 
     <!-- Navigation Bar -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
@@ -70,7 +93,8 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <a href="#hero" class="flex items-center space-x-2 group cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-400 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-400 relative z-10" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                     <div class="flex flex-col items-start">
@@ -81,23 +105,42 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 font-medium text-sm">
-                    <a href="#about" class="text-slate-300 hover:text-white transition-colors uppercase tracking-wide group py-2 relative">About Us <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="#services" class="text-slate-300 hover:text-white transition-colors uppercase tracking-wide group py-2 relative">Services <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="#strategy" class="text-slate-300 hover:text-white transition-colors uppercase tracking-wide group py-2 relative">Strategy <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="#training" class="text-slate-300 hover:text-white transition-colors uppercase tracking-wide group py-2 relative">Training <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="#team" class="text-slate-300 hover:text-white transition-colors uppercase tracking-wide group py-2 relative">Team <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="#contact" class="btn-primary text-white px-6 py-2.5 rounded-full font-semibold tracking-wide border border-white/10">Get In Touch</a>
+                    <a href="#about"
+                        class="text-slate-300 hover:text-white transition-colors uppercase tracking-wide group py-2 relative">About
+                        Us <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#services"
+                        class="text-slate-300 hover:text-white transition-colors uppercase tracking-wide group py-2 relative">Services
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#strategy"
+                        class="text-slate-300 hover:text-white transition-colors uppercase tracking-wide group py-2 relative">Strategy
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#training"
+                        class="text-slate-300 hover:text-white transition-colors uppercase tracking-wide group py-2 relative">Training
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#team"
+                        class="text-slate-300 hover:text-white transition-colors uppercase tracking-wide group py-2 relative">Team
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#contact"
+                        class="btn-primary text-white px-6 py-2.5 rounded-full font-semibold tracking-wide border border-white/10">Get
+                        In Touch</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button id="menuButton" class="text-white focus:outline-none p-2 rounded-lg hover:bg-white/10">
                         <!-- Menu Icon -->
-                        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                         <!-- Close Icon -->
-                        <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 hidden" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -106,14 +149,23 @@
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="md:hidden absolute w-full bg-[#0f172a]/95 backdrop-blur-xl border-t border-white/10 p-4 shadow-2xl hidden">
+        <div id="mobileMenu"
+            class="md:hidden absolute w-full bg-[#0f172a]/95 backdrop-blur-xl border-t border-white/10 p-4 shadow-2xl hidden">
             <div class="flex flex-col space-y-4">
-                <a href="#about" class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">About Us</a>
-                <a href="#services" class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">Services</a>
-                <a href="#strategy" class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">Strategy</a>
-                <a href="#training" class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">Training</a>
-                <a href="#team" class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">Team</a>
-                <a href="#contact" class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">Contact Us</a>
+                <a href="#about"
+                    class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">About
+                    Us</a>
+                <a href="#services"
+                    class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">Services</a>
+                <a href="#strategy"
+                    class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">Strategy</a>
+                <a href="#training"
+                    class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">Training</a>
+                <a href="#team"
+                    class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">Team</a>
+                <a href="#contact"
+                    class="text-left py-3 px-4 rounded-lg font-medium text-slate-300 hover:bg-white/5 hover:text-amber-400 transition-all border-b border-white/5">Contact
+                    Us</a>
             </div>
         </div>
     </nav>
@@ -125,34 +177,46 @@
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <!-- Text Content -->
                     <div class="md:w-3/5 space-y-8 scroll-reveal">
-                        <div class="inline-flex items-center px-4 py-2 bg-blue-900/30 border border-blue-500/30 rounded-full text-blue-200 text-xs font-bold tracking-widest uppercase backdrop-blur-md">
+                        <div
+                            class="inline-flex items-center px-4 py-2 bg-blue-900/30 border border-blue-500/30 rounded-full text-blue-200 text-xs font-bold tracking-widest uppercase backdrop-blur-md">
                             <span class="w-2 h-2 rounded-full bg-amber-500 mr-2 animate-pulse"></span>
-                            Gaza • Palestine • EST. 2023
+                            Gaza • Palestine
                         </div>
-                        
-                        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 drop-shadow-sm">
+
+                        <h1
+                            class="text-5xl md:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 drop-shadow-sm">
                             Your Strategic Partner for <br>
                             <span class="relative inline-block mt-2">
-                               <span class="absolute inset-0 bg-amber-500/20 blur-xl filter"></span>
-                               <span class="relative text-amber-400">Resilient and Accountable Impact</span>
+                                <span class="absolute inset-0 bg-amber-500/20 blur-xl filter"></span>
+                                <span class="relative text-amber-400">Resilient and Accountable Impact</span>
                             </span>
                         </h1>
-                        
-                        <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl border-l-2 border-amber-500/50 pl-6">
-                            We bridge the gap between global standards and post-conflict realities. We empower local institutions to manage recovery funding with **intelligence, transparency, and operational excellence** (PMP/PMD Pro alignment).
+
+                        <p
+                            class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl border-l-2 border-amber-500/50 pl-6">
+                            We Bridge the GAP between Global Standards & Post-Conflict Realities. We EMPOWER Local
+                            NGOs & CBOs to Manage Recovery Funding with Intelligence, Transparency, and Operational
+                            Excellence (PMP & PMD Pro alignment)
                         </p>
-                        
+
                         <div class="flex flex-col sm:flex-row gap-5 pt-4">
-                            <a href="#services" class="group relative px-8 py-4 bg-amber-500 text-blue-950 font-bold rounded-xl overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(245,158,11,0.5)]">
-                                <div class="absolute inset-0 w-full h-full bg-gradient-to-l from-transparent via-white/40 to-transparent translate-x-[100%] group-hover:translate-x-[-100%] transition-transform duration-700"></div>
+                            <a href="#services"
+                                class="group relative px-8 py-4 bg-amber-500 text-blue-950 font-bold rounded-xl overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(245,158,11,0.5)]">
+                                <div
+                                    class="absolute inset-0 w-full h-full bg-gradient-to-l from-transparent via-white/40 to-transparent translate-x-[100%] group-hover:translate-x-[-100%] transition-transform duration-700">
+                                </div>
                                 <span class="flex items-center justify-center">
-                                    Discover Our Services 
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    Discover Our Services
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
                                 </span>
                             </a>
-                            <a href="#about" class="px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/30 transition-all backdrop-blur-sm flex items-center justify-center">
+                            <a href="#about"
+                                class="px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/30 transition-all backdrop-blur-sm flex items-center justify-center">
                                 Our Vision
                             </a>
                         </div>
@@ -161,29 +225,44 @@
                     <!-- 3D Visual Element -->
                     <div class="md:w-2/5 relative h-[400px] w-full flex items-center justify-center">
                         <div class="relative w-64 h-64">
-                            <div class="absolute inset-0 rounded-full border border-blue-400/30 animate-[spin_10s_linear_infinite]"></div>
-                            <div class="absolute inset-4 rounded-full border border-amber-400/20 animate-[spin_15s_linear_infinite_reverse]"></div>
+                            <div
+                                class="absolute inset-0 rounded-full border border-blue-400/30 animate-[spin_10s_linear_infinite]">
+                            </div>
+                            <div
+                                class="absolute inset-4 rounded-full border border-amber-400/20 animate-[spin_15s_linear_infinite_reverse]">
+                            </div>
                             <!-- Glass Orb -->
-                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/20 to-amber-500/20 backdrop-blur-xl border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.3)]"></div>
-                            
-                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-amber-400 mx-auto drop-shadow-[0_0_15px_rgba(251,191,36,0.8)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            <div
+                                class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/20 to-amber-500/20 backdrop-blur-xl border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.3)]">
+                            </div>
+
+                            <div
+                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-16 w-16 text-amber-400 mx-auto drop-shadow-[0_0_15px_rgba(251,191,36,0.8)]"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                                 <div class="mt-2 text-sm font-bold tracking-widest text-blue-200">SYNERGY</div>
                             </div>
 
                             <!-- Orbiting Satellites -->
-                            <div class="absolute top-0 left-1/2 w-4 h-4 bg-blue-400 rounded-full shadow-[0_0_10px_#60a5fa] animate-ping"></div>
-                            <div class="absolute bottom-10 right-0 w-3 h-3 bg-amber-400 rounded-full shadow-[0_0_10px_#fbbf24]"></div>
+                            <div
+                                class="absolute top-0 left-1/2 w-4 h-4 bg-blue-400 rounded-full shadow-[0_0_10px_#60a5fa] animate-ping">
+                            </div>
+                            <div
+                                class="absolute bottom-10 right-0 w-3 h-3 bg-amber-400 rounded-full shadow-[0_0_10px_#fbbf24]">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Scroll Indicator -->
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
             </div>
@@ -195,60 +274,91 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <!-- Text Content -->
                     <div class="space-y-6 scroll-reveal" data-delay="200">
-                        <h2 class="text-sm font-bold text-amber-400 uppercase tracking-widest">Organizational Context</h2>
-                        <h3 class="text-3xl md:text-4xl font-bold text-white">Post-Conflict Realities and <br>Institutional Resilience</h3>
+                        <h2 class="text-sm font-bold text-amber-400 uppercase tracking-widest">Organizational Context
+                        </h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white">Post-Conflict Realities and
+                            <br>Institutional Resilience
+                        </h3>
                         <p class="text-slate-400 text-lg leading-relaxed">
-                            In the wake of crisis, Gaza faces unprecedented challenges. Infrastructure is volatile, and recovery funding requires highly **accountable, RBM-compliant, and sophisticated systems**.
+                            In the wake of crisis, GAZA faces unprecedented challenges. Infrastructure is volatile, and
+                            recovery funding requires highly accountable, RBM-compliant, and sophisticated systems
                         </p>
                         <p class="text-slate-400 text-lg leading-relaxed">
-                            <strong class="text-white">SYNERGY</strong> acts as an architectural bridge between the expectations of international donors and local operational realities, ensuring **flexibility and compliance** are built into every project lifecycle (PMD Pro Principle).
+                            <strong class="text-white">SYNERGY</strong> ACTS as an Architectural Bridge between the
+                            Expectations of International Donors & Local Operational Realities, Ensuring Flexibility
+                            & Compliance are Built into every Project Lifecycle (PMP & PMD Pro Principle)
                         </p>
-                        
-                        <div class="bg-gradient-to-l from-blue-900/40 to-transparent border-l-4 border-amber-500 p-6 rounded-r-lg backdrop-blur-sm">
+
+                        <div
+                            class="bg-gradient-to-l from-blue-900/40 to-transparent border-l-4 border-amber-500 p-6 rounded-r-lg backdrop-blur-sm">
                             <h4 class="font-bold text-white mb-2 flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944c3.132 0-6.257.973-8.834 2.846A15.01 15.01 0 002 12c0 3.842 1.332 7.394 3.535 10.198 2.576 1.874 5.702 2.847 8.834 2.847 3.132 0 6.257-.973 8.834-2.847A15.01 15.01 0 0022 12c0-3.842-1.332-7.394-3.535-10.198z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-amber-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944c3.132 0-6.257.973-8.834 2.846A15.01 15.01 0 002 12c0 3.842 1.332 7.394 3.535 10.198 2.576 1.874 5.702 2.847 8.834 2.847 3.132 0 6.257-.973 8.834-2.847A15.01 15.01 0 0022 12c0-3.842-1.332-7.394-3.535-10.198z" />
                                 </svg>
-                                Accountability and Compliance
+                                Accountability & Compliance
                             </h4>
                             <p class="text-sm text-slate-300">
-                                We ensure alignment with **CHS, SPHERE, and Results-Based Management (RBM)** standards, enabling local NGOs to absorb funding safely and efficiently.
+                                We Rnsure Alignment with CHS, SPHERE, and Results-Based Management (RBM) standards,
+                                Enabling Local NGOs & CBOs to Absorb Funding Safely & Efficiently
                             </p>
                         </div>
                     </div>
 
                     <!-- Vision/Mission/UVP Cards -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 scroll-reveal" data-delay="100">
-                        <div class="glass-card p-8 rounded-2xl h-full flex flex-col shadow-xl tilt-card" data-tilt-max="10">
-                            <div class="mb-6 bg-slate-900/50 w-14 h-14 rounded-xl flex items-center justify-center border border-white/5 shadow-inner">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 18a.75.75 0 00.92 1.12l18-3c.57-.09 1.12-.34 1.55-.74.43-.4.73-.91.86-1.5l.3-.6A4.5 4.5 0 0021.75 6h-6.86A5.25 5.25 0 009 1.5H7.5A5.25 5.25 0 002.25 6L3 6z" />
+                        <div class="glass-card p-8 rounded-2xl h-full flex flex-col shadow-xl tilt-card"
+                            data-tilt-max="10">
+                            <div
+                                class="mb-6 bg-slate-900/50 w-14 h-14 rounded-xl flex items-center justify-center border border-white/5 shadow-inner">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 6l3 1m0 0l-3 18a.75.75 0 00.92 1.12l18-3c.57-.09 1.12-.34 1.55-.74.43-.4.73-.91.86-1.5l.3-.6A4.5 4.5 0 0021.75 6h-6.86A5.25 5.25 0 009 1.5H7.5A5.25 5.25 0 002.25 6L3 6z" />
                                 </svg>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-3">Vision</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">To be the trusted catalyst for institutional growth, enabling local organizations to achieve sustainable and resilient impact in high-risk contexts.</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">To be the Trusted Catalyst for
+                                Institutional Growth, Enabling Local Organizations to Achieve Sustainable & Resilient
+                                Impact in High-Risk Contexts</p>
                         </div>
-                        <div class="glass-card p-8 rounded-2xl h-full flex flex-col shadow-xl tilt-card" data-tilt-max="10">
-                            <div class="mb-6 bg-slate-900/50 w-14 h-14 rounded-xl flex items-center justify-center border border-white/5 shadow-inner">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.25l-4.5-4.5L3 12l4.5 4.5L12 11.25z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25L10.5 6.75 6 11.25l4.5 4.5L15 11.25z" />
+                        <div class="glass-card p-8 rounded-2xl h-full flex flex-col shadow-xl tilt-card"
+                            data-tilt-max="10">
+                            <div
+                                class="mb-6 bg-slate-900/50 w-14 h-14 rounded-xl flex items-center justify-center border border-white/5 shadow-inner">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-amber-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 11.25l-4.5-4.5L3 12l4.5 4.5L12 11.25z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 11.25L10.5 6.75 6 11.25l4.5 4.5L15 11.25z" />
                                 </svg>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-3">Mission</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">Rapidly closing the capacity gap through crisis-adapted, donor-compliant consulting aligned with the highest international standards.</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">Rapidly Closing the Capacity GAP through
+                                Crisis-Adapted, Donor-Compliant Consulting Aligned with the Highest International
+                                Standards</p>
                         </div>
                         <div class="sm:col-span-2 glass-card p-8 rounded-2xl shadow-xl tilt-card" data-tilt-max="10">
                             <h3 class="font-bold text-2xl mb-6 flex items-center text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944c-3.132 0-6.257.973-8.834 2.846A15.01 15.01 0 002 12c0 3.842 1.332 7.394 3.535 10.198 2.576 1.874 5.702 2.847 8.834 2.847 3.132 0 6.257-.973 8.834-2.847A15.01 15.01 0 0022 12c0-3.842-1.332-7.394-3.535-10.198z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-amber-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944c-3.132 0-6.257.973-8.834 2.846A15.01 15.01 0 002 12c0 3.842 1.332 7.394 3.535 10.198 2.576 1.874 5.702 2.847 8.834 2.847 3.132 0 6.257-.973 8.834-2.847A15.01 15.01 0 0022 12c0-3.842-1.332-7.394-3.535-10.198z" />
                                 </svg>
                                 Unique Value Proposition (UVP)
                             </h3>
                             <div class="grid sm:grid-cols-3 gap-4">
-                                <span class="bg-white/5 p-3 rounded-lg border border-white/5 text-sm text-slate-300">Certified Expertise (PMP® & PMD Pro)</span>
-                                <span class="bg-white/5 p-3 rounded-lg border border-white/5 text-sm text-slate-300">Crisis-Adaptive Flexibility (CHS)</span>
-                                <span class="bg-white/5 p-3 rounded-lg border border-white/5 text-sm text-slate-300">Mitigated Investment Risk</span>
+                                <span
+                                    class="bg-white/5 p-3 rounded-lg border border-white/5 text-sm text-slate-300">Certified
+                                    Expertise (PMP® & PMD Pro)</span>
+                                <span
+                                    class="bg-white/5 p-3 rounded-lg border border-white/5 text-sm text-slate-300">Crisis-Adaptive
+                                    Flexibility (CHS)</span>
+                                <span
+                                    class="bg-white/5 p-3 rounded-lg border border-white/5 text-sm text-slate-300">Mitigated
+                                    Investment Risk</span>
                             </div>
                         </div>
                     </div>
@@ -262,7 +372,8 @@
                 <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
                     <span class="text-amber-500 font-bold tracking-widest uppercase text-xs">Our Services</span>
                     <h2 class="text-4xl md:text-5xl font-bold text-white mt-3 mb-6">Core Capability Streams</h2>
-                    <p class="text-slate-400">Integrated solutions tailored for International Agencies, NGOs, and Municipalities.</p>
+                    <p class="text-slate-400">Integrated Solutions Tailored for International Agencies, NGOs, CBOs, and
+                        Municipalities</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -275,19 +386,23 @@
         <section id="strategy" class="py-24 relative overflow-hidden">
             <div class="absolute inset-0 bg-blue-900/5 -skew-y-3 transform origin-top-left -z-10"></div>
             <div class="container mx-auto px-4 md:px-6">
-               <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-4xl font-bold text-white mb-2">Strategic Framework <span class="text-amber-500">2024–2027</span></h2>
-                <p class="text-slate-400">Four foundational pillars guiding our impact ecosystem.</p>
-              </div>
-
-              <div class="relative">
-                <!-- Desktop Connection Line -->
-                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -translate-y-1/2 z-0"></div>
-
-                <div id="strategy-pillars" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-                    <!-- Strategy Pillars will be injected here by JS -->
+                <div class="text-center mb-16 scroll-reveal">
+                    <h2 class="text-4xl font-bold text-white mb-2">Strategic Framework <span
+                            class="text-amber-500">2024–2027</span></h2>
+                    <p class="text-slate-400">Four Foundational Pillars Guiding Our IMPACT</p>
                 </div>
-              </div>
+
+                <div class="relative">
+                    <!-- Desktop Connection Line -->
+                    <div
+                        class="hidden lg:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -translate-y-1/2 z-0">
+                    </div>
+
+                    <div id="strategy-pillars"
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                        <!-- Strategy Pillars will be injected here by JS -->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -298,29 +413,39 @@
                 <div class="flex flex-col md:flex-row gap-12">
                     <!-- Left Column: Info -->
                     <div class="md:w-1/3 sticky top-24 self-start scroll-reveal">
-                        <div class="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-lg text-amber-400 text-xs font-bold mb-6">Certified Pathway</div>
-                        <h2 class="text-4xl font-bold text-white mb-6 leading-tight">Institutional Resilience Pathway in Gaza</h2>
+                        <div
+                            class="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-lg text-amber-400 text-xs font-bold mb-6">
+                            Certified Pathway</div>
+                        <h2 class="text-4xl font-bold text-white mb-6 leading-tight">Institutional Resilience Pathway in
+                            Gaza</h2>
                         <p class="text-slate-400 mb-8">
-                            20 specialized units designed for the specific constraints of the post-conflict environment.
+                            20 specialized units designed for the specific constraints of the post-conflict environment
                         </p>
                         <div class="bg-white/5 p-6 rounded-2xl backdrop-blur-md border border-white/10 shadow-lg">
-                            <h4 class="font-bold text-white mb-4 border-b border-white/10 pb-2">Methodology (PMD Pro Aligned)</h4>
+                            <h4 class="font-bold text-white mb-4 border-b border-white/10 pb-2">Methodology (PMP & PMD Pro
+                                Aligned)</h4>
                             <ul class="space-y-4 text-sm text-slate-300">
                                 <li class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 0112 15z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-blue-400"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 0112 15z" />
                                     </svg>
                                     Global Standards (PMP®, Sphere, PMD Pro)
                                 </li>
                                 <li class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-amber-400"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                     Experiential Learning (60% Interactive)
                                 </li>
                                 <li class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 2h2m-1 0h1m-1-4h1m-1 0h1m-1-4h1m-1 0h1M3 21h18v-4H3v4z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-emerald-400"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 17v-2m3 2v-4m3 4v-6m2 2h2m-1 0h1m-1-4h1m-1 0h1m-1-4h1m-1 0h1M3 21h18v-4H3v4z" />
                                     </svg>
                                     Practical Toolkits and Job Aids
                                 </li>
@@ -341,12 +466,14 @@
         <!-- Team Section -->
         <section id="team" class="py-24 relative overflow-hidden bg-[#0f172a]">
             <!-- Background Grid -->
-            <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-            
+            <div
+                class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]">
+            </div>
+
             <div class="container mx-auto px-4 md:px-6 relative z-10">
                 <div class="text-center mb-16 scroll-reveal">
                     <h2 class="text-4xl font-bold text-white">Our Core Leadership Team</h2>
-                    <p class="text-slate-400 mt-3">Crisis-forged leadership, globally certified.</p>
+                    <p class="text-slate-400 mt-3">Crisis-Forged Leadership, Globally Certified</p>
                 </div>
 
                 <div id="team-cards" class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -362,54 +489,74 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
                 <div>
                     <div class="flex items-center space-x-2 mb-6 text-white">
-                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
-                         <span class="text-2xl font-bold tracking-tight">SYNERGY</span>
+                        <span class="text-2xl font-bold tracking-tight">SYNERGY</span>
                     </div>
                     <p class="mb-6 text-sm leading-relaxed max-w-xs">
-                        Empowering local Gaza organizations to achieve sustainable, resilient, and accountable impact through world-class consulting and training.
+                        Empowering Local Gaza NGOs & CBOs TO Achieve Sustainable, Resilient, and Accountable Impact
+                        through World-Class Consulting & Training
                     </p>
                 </div>
-                
+
                 <div>
                     <h4 class="text-white font-bold mb-6 text-lg">Contact Information</h4>
                     <ul class="space-y-4 text-sm">
                         <li class="flex items-center group">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 group-hover:text-amber-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11.25l7.989-7.989v4.989h4.989l7.989-7.989-4.989-4.989H11v4.989L3.055 11.25z" />
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-3 group-hover:text-amber-400 transition-colors" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.055 11.25l7.989-7.989v4.989h4.989l7.989-7.989-4.989-4.989H11v4.989L3.055 11.25z" />
                             </svg>
                             <span class="group-hover:text-white transition-colors">Gaza City, Palestine</span>
                         </li>
                         <li class="flex items-center group">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 group-hover:text-amber-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-3 group-hover:text-amber-400 transition-colors" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
-                            <span class="group-hover:text-white transition-colors">info@synergy-gaza.com</span>
+                            <span class="group-hover:text-white transition-colors">info@synergy-tc.com</span>
                         </li>
-                         <li class="flex items-center group">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 group-hover:text-amber-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        <li class="flex items-center group">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 mr-3 group-hover:text-amber-400 transition-colors" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
-                            <span class="group-hover:text-white transition-colors">+970 59 000 0000</span>
+                            <span class="group-hover:text-white transition-colors">+972 598 386 126</span>
                         </li>
-                      </ul>
+                    </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold mb-6 text-lg">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#about" class="hover:text-amber-400 hover:translate-x-2 transition-all duration-300 flex items-center">About Us</a></li>
-                        <li><a href="#services" class="hover:text-amber-400 hover:translate-x-2 transition-all duration-300 flex items-center">Consulting Services</a></li>
-                        <li><a href="#training" class="hover:text-amber-400 hover:translate-x-2 transition-all duration-300 flex items-center">Training Programs</a></li>
-                        <li><a href="#strategy" class="hover:text-amber-400 hover:translate-x-2 transition-all duration-300 flex items-center">Strategic Framework</a></li>
+                        <li><a href="#about"
+                                class="hover:text-amber-400 hover:translate-x-2 transition-all duration-300 flex items-center">About
+                                Us</a></li>
+                        <li><a href="#services"
+                                class="hover:text-amber-400 hover:translate-x-2 transition-all duration-300 flex items-center">Consulting
+                                Services</a></li>
+                        <li><a href="#training"
+                                class="hover:text-amber-400 hover:translate-x-2 transition-all duration-300 flex items-center">Training
+                                Programs</a></li>
+                        <li><a href="#strategy"
+                                class="hover:text-amber-400 hover:translate-x-2 transition-all duration-300 flex items-center">Strategic
+                                Framework</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-white/5 mt-12 pt-8 text-center text-xs flex flex-col md:flex-row justify-between items-center text-slate-600">
-                <p>All Rights Reserved. SYNERGY Consulting & Training &copy; 2024</p>
-                <p class="mt-2 md:mt-0">Built for Resilience and Accountability.</p>
+
+            <div
+                class="border-t border-white/5 mt-12 pt-8 text-center text-xs flex flex-col md:flex-row justify-between items-center text-slate-600">
+                <p>All Rights Reserved. SYNERGY Consulting & Training &copy; 2025</p>
+                <p class="mt-2 md:mt-0">Built for Resilience and Accountability</p>
             </div>
         </div>
     </footer>
@@ -450,7 +597,7 @@
             });
 
             // --- 3. Dynamic Content Generation ---
-            
+
             // Professional Development/PMD Pro terminology is used here
             const servicesData = [
                 { icon: '&#9889;', title: 'Institutional Strengthening', items: ["Capacity Assessments (ICAs)", "Donor Compliance Audits", "Organizational Resilience Mapping (PMD Pro)"], accent: 'cyan' },
@@ -475,32 +622,66 @@
                 { title: "Module D: Proposal Development & Donor Compliance", content: "Winning Proposal Writing, Budgeting, Financial Oversight, Donor Compliance, Audit Readiness, Governance." },
                 { title: "Module E: Digital Skills & Well-being", content: "Data Management, Dashboard Visualization, Responsible AI, Leadership, Change Management, Psychosocial Well-being." },
             ];
-            
+
             const teamData = [
-                { name: "Salah M. Taya", role: "Director & Lead Consultant", desc: "24+ years in humanitarian and development project management. Expertise in institutional capacity building, MEAL, and donor-funded programs across Gaza and the region.", initials: "S.T", color: "from-blue-500 to-blue-700" },
-                { name: "Ahmad S. Abu Abdo", role: "Senior Consultant, Municipal Services", desc: "Expert in ensuring municipal service continuity under conflict. Specialized in change management, governance, and public service delivery in high-risk environments.", initials: "A.A", color: "from-amber-500 to-amber-700" },
+                {
+                    name: "Salah M. Tayeh",
+                    role: "Director & Lead Consultant",
+                    desc: "•• 24+ Years in Humanitarian & Development Projects Management •• Expertise in institutional capacity building, MEAL, and donor-funded programs across Gaza and the region.",
+                    image: "https://raw.githubusercontent.com/ahmedabuabdu90/SYNERGY-Consulting-Training/1c9a8304ed1b15c2cb21b564506d55e11730a006/Capture.JPG",
+                    linkedin: "https://www.linkedin.com/in/salah-m-tayeh-905b4b75/",
+                    color: "from-blue-500 to-blue-700"
+                },
+                {
+                    name: "Ahmad S. AbuAbdu",
+                    role: "Senior Consultant",
+                    desc: "•• 13+ Years in Humanitarian & Development Projects Management •• Contributor to PMBOK® Guide 8th Edition •• MSc. IWRM.•• MSc. ISWM.",
+                    image: "https://raw.githubusercontent.com/ahmedabuabdu90/SYNERGY-Consulting-Training/1c9a8304ed1b15c2cb21b564506d55e11730a006/WhatsApp%20Image%202025-11-22%20at%202.26.48%20PM.jpeg",
+                    linkedin: "https://www.linkedin.com/in/ahmedabuabdu/",
+                    color: "from-amber-500 to-amber-700"
+                },
             ];
 
             // Helper function to generate 3D Cards
             function generateCard(data, type) {
-                if (type === 'service') {
-                    const accentColor = data.accent;
+                if (type === 'team') {
+                    const fallbackContent = `
+            <div class="w-24 h-24 rounded-2xl bg-gradient-to-br ${data.color} flex items-center justify-center text-white font-bold text-2xl mb-6 sm:mb-0 sm:mr-8 shrink-0 shadow-lg shadow-black/30">
+                ${data.initials}
+            </div>
+        `;
+
+                    const imageContent = data.image ? `
+            <img src="${data.image}" 
+                 alt="${data.name}" 
+                 class="w-24 h-24 rounded-2xl object-cover mb-6 sm:mb-0 sm:mr-8 shrink-0 shadow-lg shadow-black/30"
+                 loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="w-24 h-24 rounded-2xl bg-gradient-to-br ${data.color} flex items-center justify-center text-white font-bold text-2xl mb-6 sm:mb-0 sm:mr-8 shrink-0 shadow-lg shadow-black/30" style="display:none;">
+                ${data.initials}
+            </div>
+        ` : fallbackContent;
+
                     return `
-                        <div class="glass-card rounded-2xl p-1 group h-full hover:-translate-y-1 transition-transform duration-300 tilt-card" data-tilt-max="5">
-                            <div class="relative bg-[#0f172a]/80 h-full rounded-xl p-6 transition-colors group-hover:bg-[#0f172a]/60 border border-${accentColor}-500/30">
-                                <div class="mb-6 p-3 bg-white/5 rounded-lg inline-block text-4xl text-${accentColor}-400">${data.icon}</div>
-                                <h3 class="font-bold text-xl text-white mb-4 group-hover:text-amber-400 transition-colors">${data.title}</h3>
-                                <ul class="space-y-3 pl-2">
-                                    ${data.items.map(item => `
-                                        <li class="flex items-start text-sm text-slate-300">
-                                            <span class="mr-2 text-amber-500 mt-1">▹</span>
-                                            ${item}
-                                        </li>
-                                    `).join('')}
-                                </ul>
-                            </div>
-                        </div>
-                    `;
+            <div class="glass-card p-8 rounded-2xl tilt-card hover:bg-white/10" data-tilt-max="5">
+                <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
+                    ${imageContent}
+                    <div>
+                        <h3 class="font-bold text-white text-xl mb-1">${data.name}</h3>
+                        <div class="text-amber-400 text-sm font-medium mb-3 uppercase tracking-wider">${data.role}</div>
+                        <p class="text-slate-400 text-sm leading-relaxed">${data.desc}</p>
+                        ${data.linkedin ? `
+                            <a href="${data.linkedin}" target="_blank" class="mt-4 inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                LinkedIn Profile
+                            </a>
+                        ` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
                 } else if (type === 'strategy') {
                     return `
                         <div class="group relative scroll-reveal" data-delay="${parseInt(data.number) * 100}">
@@ -557,14 +738,14 @@
             document.querySelector('#services .grid').innerHTML = servicesData.map(d => generateCard(d, 'service')).join('');
             document.getElementById('strategy-pillars').innerHTML = strategyData.map(d => generateCard(d, 'strategy')).join('');
             document.getElementById('team-cards').innerHTML = teamData.map(d => generateCard(d, 'team')).join('');
-            document.getElementById('training-accordion').innerHTML = trainingData.map((d, i) => generateCard({...d, index: i}, 'accordion')).join('');
+            document.getElementById('training-accordion').innerHTML = trainingData.map((d, i) => generateCard({ ...d, index: i }, 'accordion')).join('');
 
             // --- 4. Accordion Functionality ---
             document.querySelectorAll('.accordion-button').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const content = button.nextElementSibling;
                     const arrow = button.querySelector('.accordion-arrow');
-                    
+
                     // Close all other open content
                     document.querySelectorAll('.accordion-content').forEach(c => {
                         if (c !== content && c.style.maxHeight !== '0px') {
@@ -601,10 +782,10 @@
                     const rect = card.getBoundingClientRect();
                     const x = (e.clientX - rect.left) / rect.width;
                     const y = (e.clientY - rect.top) / rect.height;
-                    
+
                     const tiltX = (0.5 - y) * maxTilt; // Tilt around X-axis
                     const tiltY = (x - 0.5) * maxTilt; // Tilt around Y-axis
-                    
+
                     card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.01, 1.01, 1.01)`;
                 });
 
@@ -638,13 +819,13 @@
             const ctx = canvas.getContext('2d');
             let particles = [];
             let mouse = { x: null, y: null };
-            
+
             const resizeCanvas = () => {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
                 initParticles();
             };
-            
+
             window.addEventListener('resize', resizeCanvas);
             window.addEventListener('mousemove', (e) => {
                 mouse.x = e.x;
@@ -665,7 +846,7 @@
                     this.y += this.speedY;
                     if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
                     if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
-                    
+
                     // Mouse interaction
                     if (mouse.x !== null) {
                         const dx = mouse.x - this.x;
@@ -699,21 +880,21 @@
                 for (let i = 0; i < particles.length; i++) {
                     particles[i].update();
                     particles[i].draw();
-                    
+
                     // Draw connections (Synergy)
                     for (let j = i; j < particles.length; j++) {
-                      const dx = particles[i].x - particles[j].x;
-                      const dy = particles[i].y - particles[j].y;
-                      const distance = Math.sqrt(dx * dx + dy * dy);
-                      
-                      if (distance < 120) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 - distance/800})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                      }
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 120) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 - distance / 800})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
                     }
                 }
                 requestAnimationFrame(animate);
@@ -727,4 +908,5 @@
         });
     </script>
 </body>
+
 </html>
